@@ -74,8 +74,7 @@
 			children = (
 				530AC24D291CFDA1009CE3F2 /* Main */,
 			);
-			name = Sources;
-			path = ../../Sources;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		530AC24D291CFDA1009CE3F2 /* Main */ = {
