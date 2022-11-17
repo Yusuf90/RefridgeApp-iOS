@@ -11,7 +11,63 @@
 		530AC23C291C1BBF009CE3F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 530AC23B291C1BBF009CE3F2 /* Assets.xcassets */; };
 		530AC23F291C1BBF009CE3F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530AC23D291C1BBF009CE3F2 /* LaunchScreen.storyboard */; };
 		530AC24C291CFD99009CE3F2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530AC24B291CFD99009CE3F2 /* TabBarController.swift */; };
+		53D4DD032925323400E37173 /* RefridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD022925323400E37173 /* RefridgeApp.swift */; };
+		53D4DD052925323400E37173 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD042925323400E37173 /* ContentView.swift */; };
+		53D4DD072925323500E37173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D4DD062925323500E37173 /* Assets.xcassets */; };
+		53D4DD0A2925323500E37173 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D4DD092925323500E37173 /* Preview Assets.xcassets */; };
+		53D4DD0D2925323500E37173 /* Refridge Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 53D4DD002925323400E37173 /* Refridge Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		53D4DD9629264A2600E37173 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D4DD1829253A2A00E37173 /* WidgetKit.framework */; };
+		53D4DD9729264A2600E37173 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D4DD1A29253A2A00E37173 /* SwiftUI.framework */; };
+		53D4DD9A29264A2600E37173 /* RefridgeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD9929264A2600E37173 /* RefridgeWidgetBundle.swift */; };
+		53D4DD9C29264A2600E37173 /* RecipeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD9B29264A2600E37173 /* RecipeWidget.swift */; };
+		53D4DD9E29264A2900E37173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D4DD9D29264A2900E37173 /* Assets.xcassets */; };
+		53D4DDA229264A2900E37173 /* RefridgeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 53D4DD9529264A2600E37173 /* RefridgeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		53D4DDB429266F3700E37173 /* RecipeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DDB329266F3700E37173 /* RecipeEntry.swift */; };
+		53D4DDB629266FBD00E37173 /* RecipeWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DDB529266FBD00E37173 /* RecipeWidgetEntryView.swift */; };
+		53D4DDBA2926742600E37173 /* RecipeWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DDB92926742600E37173 /* RecipeWidgetProvider.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53D4DD0B2925323500E37173 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 530AC227291C1BBE009CE3F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53D4DCFF2925323400E37173;
+			remoteInfo = "Refridge Watch App";
+		};
+		53D4DDA029264A2900E37173 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 530AC227291C1BBE009CE3F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53D4DD9429264A2600E37173;
+			remoteInfo = RefridgeWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		53D4DD112925323600E37173 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				53D4DD0D2925323500E37173 /* Refridge Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D4DD2C29253A2D00E37173 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				53D4DDA229264A2900E37173 /* RefridgeWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		530AC22F291C1BBE009CE3F2 /* RefridgeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefridgeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +76,22 @@
 		530AC23E291C1BBF009CE3F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		530AC240291C1BBF009CE3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		530AC24B291CFD99009CE3F2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		53D4DD002925323400E37173 /* Refridge Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Refridge Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D4DD022925323400E37173 /* RefridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefridgeApp.swift; sourceTree = "<group>"; };
+		53D4DD042925323400E37173 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		53D4DD062925323500E37173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53D4DD092925323500E37173 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		53D4DD1829253A2A00E37173 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		53D4DD1A29253A2A00E37173 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		53D4DD4D29253C7A00E37173 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		53D4DD9529264A2600E37173 /* RefridgeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RefridgeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D4DD9929264A2600E37173 /* RefridgeWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefridgeWidgetBundle.swift; sourceTree = "<group>"; };
+		53D4DD9B29264A2600E37173 /* RecipeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWidget.swift; sourceTree = "<group>"; };
+		53D4DD9D29264A2900E37173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53D4DD9F29264A2900E37173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D4DDB329266F3700E37173 /* RecipeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeEntry.swift; path = RefridgeWidget/Sources/Main/Models/RecipeEntry.swift; sourceTree = SOURCE_ROOT; };
+		53D4DDB529266FBD00E37173 /* RecipeWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWidgetEntryView.swift; sourceTree = "<group>"; };
+		53D4DDB92926742600E37173 /* RecipeWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWidgetProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +102,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53D4DCFD2925323400E37173 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D4DD9229264A2600E37173 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D4DD9729264A2600E37173 /* SwiftUI.framework in Frameworks */,
+				53D4DD9629264A2600E37173 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				530AC231291C1BBE009CE3F2 /* RefridgeApp */,
+				53D4DD012925323400E37173 /* Refridge Watch App */,
+				53D4DD9829264A2600E37173 /* RefridgeWidget */,
+				53D4DD1729253A2A00E37173 /* Frameworks */,
 				530AC230291C1BBE009CE3F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				530AC22F291C1BBE009CE3F2 /* RefridgeApp.app */,
+				53D4DD002925323400E37173 /* Refridge Watch App.app */,
+				53D4DD9529264A2600E37173 /* RefridgeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,6 +145,7 @@
 		530AC231291C1BBE009CE3F2 /* RefridgeApp */ = {
 			isa = PBXGroup;
 			children = (
+				53D4DD862926334700E37173 /* Resources */,
 				530AC249291CFD38009CE3F2 /* Configuration */,
 				530AC24A291CFD5A009CE3F2 /* Sources */,
 			);
@@ -61,10 +155,7 @@
 		530AC249291CFD38009CE3F2 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				530AC232291C1BBE009CE3F2 /* AppDelegate.swift */,
-				530AC240291C1BBF009CE3F2 /* Info.plist */,
-				530AC23D291C1BBF009CE3F2 /* LaunchScreen.storyboard */,
-				530AC23B291C1BBF009CE3F2 /* Assets.xcassets */,
+				53D4DD902926396700E37173 /* Main */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -80,9 +171,254 @@
 		530AC24D291CFDA1009CE3F2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				530AC24B291CFD99009CE3F2 /* TabBarController.swift */,
+				530AC232291C1BBE009CE3F2 /* AppDelegate.swift */,
+				53D4DD8A2926343300E37173 /* Tabbar */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		53D4DD012925323400E37173 /* Refridge Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD85292631CC00E37173 /* Resources */,
+				53D4DD84292631C400E37173 /* Sources */,
+				53D4DD83292631B900E37173 /* Configuration */,
+				53D4DD082925323500E37173 /* Preview Content */,
+			);
+			path = "Refridge Watch App";
+			sourceTree = "<group>";
+		};
+		53D4DD082925323500E37173 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD092925323500E37173 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		53D4DD1729253A2A00E37173 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD1829253A2A00E37173 /* WidgetKit.framework */,
+				53D4DD1A29253A2A00E37173 /* SwiftUI.framework */,
+				53D4DD4D29253C7A00E37173 /* Intents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53D4DD83292631B900E37173 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		53D4DD84292631C400E37173 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD8B2926346F00E37173 /* Main */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		53D4DD85292631CC00E37173 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD8E2926390C00E37173 /* Main */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		53D4DD862926334700E37173 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD872926336700E37173 /* Main */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		53D4DD872926336700E37173 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD89292633AB00E37173 /* Assets */,
+				53D4DD882926339B00E37173 /* Storyboards */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		53D4DD882926339B00E37173 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				530AC23D291C1BBF009CE3F2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		53D4DD89292633AB00E37173 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				530AC23B291C1BBF009CE3F2 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		53D4DD8A2926343300E37173 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				530AC24B291CFD99009CE3F2 /* TabBarController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		53D4DD8B2926346F00E37173 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD8D292638DA00E37173 /* Home */,
+				53D4DD022925323400E37173 /* RefridgeApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		53D4DD8D292638DA00E37173 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD042925323400E37173 /* ContentView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		53D4DD8E2926390C00E37173 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD8F2926391200E37173 /* Assets */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		53D4DD8F2926391200E37173 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD062925323500E37173 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		53D4DD902926396700E37173 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				530AC240291C1BBF009CE3F2 /* Info.plist */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		53D4DD9829264A2600E37173 /* RefridgeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DDA829265D3600E37173 /* Resources */,
+				53D4DDA729265D3100E37173 /* Sources */,
+				53D4DDA629264A4800E37173 /* Configuration */,
+				53D4DD9D29264A2900E37173 /* Assets.xcassets */,
+				53D4DD9F29264A2900E37173 /* Info.plist */,
+			);
+			path = RefridgeWidget;
+			sourceTree = "<group>";
+		};
+		53D4DDA629264A4800E37173 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		53D4DDA729265D3100E37173 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DDA929265D4600E37173 /* Main */,
+				53D4DDAE29265DE400E37173 /* Shared */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		53D4DDA829265D3600E37173 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		53D4DDA929265D4600E37173 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD9929264A2600E37173 /* RefridgeWidgetBundle.swift */,
+				53D4DDBB2926777900E37173 /* Widgets */,
+				53D4DDAD29265DB000E37173 /* Models */,
+				53D4DDAB29265D9300E37173 /* Views */,
+				53D4DDAA29265D8900E37173 /* Providers */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		53D4DDAA29265D8900E37173 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DDB92926742600E37173 /* RecipeWidgetProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		53D4DDAB29265D9300E37173 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DDB8292672B300E37173 /* Components */,
+				53D4DDB7292672AB00E37173 /* EntryViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53D4DDAD29265DB000E37173 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DDB329266F3700E37173 /* RecipeEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		53D4DDAE29265DE400E37173 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DDAF29265DFB00E37173 /* ViewModels */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		53D4DDAF29265DFB00E37173 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		53D4DDB7292672AB00E37173 /* EntryViews */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DDB529266FBD00E37173 /* RecipeWidgetEntryView.swift */,
+			);
+			path = EntryViews;
+			sourceTree = "<group>";
+		};
+		53D4DDB8292672B300E37173 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		53D4DDBB2926777900E37173 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				53D4DD9B29264A2600E37173 /* RecipeWidget.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,15 +431,53 @@
 				530AC22B291C1BBE009CE3F2 /* Sources */,
 				530AC22C291C1BBE009CE3F2 /* Frameworks */,
 				530AC22D291C1BBE009CE3F2 /* Resources */,
+				53D4DD112925323600E37173 /* Embed Watch Content */,
+				53D4DD2C29253A2D00E37173 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				53D4DD0C2925323500E37173 /* PBXTargetDependency */,
+				53D4DDA129264A2900E37173 /* PBXTargetDependency */,
 			);
 			name = RefridgeApp;
 			productName = RefridgeApp;
 			productReference = 530AC22F291C1BBE009CE3F2 /* RefridgeApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		53D4DCFF2925323400E37173 /* Refridge Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D4DD0E2925323600E37173 /* Build configuration list for PBXNativeTarget "Refridge Watch App" */;
+			buildPhases = (
+				53D4DCFC2925323400E37173 /* Sources */,
+				53D4DCFD2925323400E37173 /* Frameworks */,
+				53D4DCFE2925323400E37173 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Refridge Watch App";
+			productName = "Refridge Watch App";
+			productReference = 53D4DD002925323400E37173 /* Refridge Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53D4DD9429264A2600E37173 /* RefridgeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D4DDA329264A2900E37173 /* Build configuration list for PBXNativeTarget "RefridgeWidgetExtension" */;
+			buildPhases = (
+				53D4DD9129264A2600E37173 /* Sources */,
+				53D4DD9229264A2600E37173 /* Frameworks */,
+				53D4DD9329264A2600E37173 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RefridgeWidgetExtension;
+			productName = RefridgeWidgetExtension;
+			productReference = 53D4DD9529264A2600E37173 /* RefridgeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -116,6 +490,12 @@
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					530AC22E291C1BBE009CE3F2 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					53D4DCFF2925323400E37173 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					53D4DD9429264A2600E37173 = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
@@ -134,6 +514,8 @@
 			projectRoot = "";
 			targets = (
 				530AC22E291C1BBE009CE3F2 /* RefridgeApp */,
+				53D4DCFF2925323400E37173 /* Refridge Watch App */,
+				53D4DD9429264A2600E37173 /* RefridgeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -145,6 +527,23 @@
 			files = (
 				530AC23F291C1BBF009CE3F2 /* LaunchScreen.storyboard in Resources */,
 				530AC23C291C1BBF009CE3F2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D4DCFE2925323400E37173 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D4DD0A2925323500E37173 /* Preview Assets.xcassets in Resources */,
+				53D4DD072925323500E37173 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D4DD9329264A2600E37173 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D4DD9E29264A2900E37173 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +559,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53D4DCFC2925323400E37173 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D4DD052925323400E37173 /* ContentView.swift in Sources */,
+				53D4DD032925323400E37173 /* RefridgeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D4DD9129264A2600E37173 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D4DDBA2926742600E37173 /* RecipeWidgetProvider.swift in Sources */,
+				53D4DDB429266F3700E37173 /* RecipeEntry.swift in Sources */,
+				53D4DDB629266FBD00E37173 /* RecipeWidgetEntryView.swift in Sources */,
+				53D4DD9A29264A2600E37173 /* RefridgeWidgetBundle.swift in Sources */,
+				53D4DD9C29264A2600E37173 /* RecipeWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53D4DD0C2925323500E37173 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53D4DCFF2925323400E37173 /* Refridge Watch App */;
+			targetProxy = 53D4DD0B2925323500E37173 /* PBXContainerItemProxy */;
+		};
+		53D4DDA129264A2900E37173 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53D4DD9429264A2600E37173 /* RefridgeWidgetExtension */;
+			targetProxy = 53D4DDA029264A2900E37173 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		530AC23D291C1BBF009CE3F2 /* LaunchScreen.storyboard */ = {
@@ -291,12 +724,13 @@
 		530AC244291C1BBF009CE3F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RefridgeApp/Configuration/Info.plist;
+				INFOPLIST_FILE = RefridgeApp/Configuration/Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -317,12 +751,13 @@
 		530AC245291C1BBF009CE3F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RefridgeApp/Configuration/Info.plist;
+				INFOPLIST_FILE = RefridgeApp/Configuration/Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -334,6 +769,116 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.ysyakur.RefridgeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53D4DD0F2925323600E37173 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Refridge Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Refridge;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = co.ysyakur.RefridgeApp;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ysyakur.RefridgeApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		53D4DD102925323600E37173 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Refridge Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Refridge;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = co.ysyakur.RefridgeApp;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ysyakur.RefridgeApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		53D4DDA429264A2900E37173 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RefridgeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RefridgeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ysyakur.RefridgeApp.RefridgeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53D4DDA529264A2900E37173 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RefridgeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RefridgeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ysyakur.RefridgeApp.RefridgeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -357,6 +902,24 @@
 			buildConfigurations = (
 				530AC244291C1BBF009CE3F2 /* Debug */,
 				530AC245291C1BBF009CE3F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D4DD0E2925323600E37173 /* Build configuration list for PBXNativeTarget "Refridge Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D4DD0F2925323600E37173 /* Debug */,
+				53D4DD102925323600E37173 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D4DDA329264A2900E37173 /* Build configuration list for PBXNativeTarget "RefridgeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D4DDA429264A2900E37173 /* Debug */,
+				53D4DDA529264A2900E37173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
