@@ -16,7 +16,6 @@ struct RecipeWidget: Widget {
         static let kind = "RecipeWidget"
         static let displayName = "Recipe Widget"
         static let description = "Example Recipe Widget for Refridge."
-        static let supportedFamilies: [WidgetFamily] = [.accessoryCircular, .systemSmall]
     }
 
     var body: some WidgetConfiguration {
@@ -25,6 +24,10 @@ struct RecipeWidget: Widget {
         }
         .configurationDisplayName(Constants.displayName)
         .description(Constants.description)
-        .supportedFamilies(Constants.supportedFamilies)
+        #if os(watchOS)
+            .supportedFamilies([.accessoryCircular])
+        #else
+            .supportedFamilies([.accessoryCircular, .systemSmall])
+        #endif
     }
 }

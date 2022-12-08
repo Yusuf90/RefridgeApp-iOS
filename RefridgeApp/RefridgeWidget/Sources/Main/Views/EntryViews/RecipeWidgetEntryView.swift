@@ -18,7 +18,7 @@ struct RecipeWidgetEntryView: View {
     // MARK: - Body
 
     var body: some View {
-        Text(entry.date, style: .time)
+        RecipeWidgetView(viewModel: RecipeWidgetViewModel())
     }
 
     // MARK: - Object lifecycle
@@ -32,6 +32,6 @@ struct RecipeWidgetEntryView: View {
 struct RecipeWidget_Previews: PreviewProvider {
     static var previews: some View {
         RecipeWidgetEntryView(entry: RecipeEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .accessoryCircular))
     }
 }

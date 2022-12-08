@@ -8,5 +8,6 @@
 import WidgetKit
 
 struct RecipeEntry: TimelineEntry {
-    let date: Date
+    var date: Date
+    
 }
