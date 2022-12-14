@@ -243,7 +243,6 @@
 			children = (
 				53D4DD85292631CC00E37173 /* Resources */,
 				53D4DD84292631C400E37173 /* Sources */,
-				53D4DD83292631B900E37173 /* Configuration */,
 				53D4DD082925323500E37173 /* Preview Content */,
 			);
 			path = RefridgeWatchApp;
@@ -265,13 +264,6 @@
 				53D4DD4D29253C7A00E37173 /* Intents.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		53D4DD83292631B900E37173 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		53D4DD84292631C400E37173 /* Sources */ = {
