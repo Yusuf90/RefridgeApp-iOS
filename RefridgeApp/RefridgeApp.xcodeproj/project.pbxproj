@@ -34,7 +34,6 @@
 		53BE9D792938B7B500F33D56 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D782938B7B500F33D56 /* StockViewController.swift */; };
 		53BE9D7B2938B7DA00F33D56 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D7A2938B7DA00F33D56 /* RecipesViewController.swift */; };
 		53D4DD032925323400E37173 /* RefridgeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD022925323400E37173 /* RefridgeWatchApp.swift */; };
-		53D4DD052925323400E37173 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD042925323400E37173 /* ContentView.swift */; };
 		53D4DD072925323500E37173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D4DD062925323500E37173 /* Assets.xcassets */; };
 		53D4DD0A2925323500E37173 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D4DD092925323500E37173 /* Preview Assets.xcassets */; };
 		53D4DD0D2925323500E37173 /* Refridge Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 53D4DD002925323400E37173 /* Refridge Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -127,7 +126,6 @@
 		53BE9D7A2938B7DA00F33D56 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		53D4DD002925323400E37173 /* Refridge Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Refridge Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D4DD022925323400E37173 /* RefridgeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefridgeWatchApp.swift; sourceTree = "<group>"; };
-		53D4DD042925323400E37173 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53D4DD062925323500E37173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53D4DD092925323500E37173 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53D4DD1829253A2A00E37173 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -240,6 +238,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		538022B2294A130100C80CC3 /* WidgetViews */ = {
+			isa = PBXGroup;
+			children = (
+				53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */,
+			);
+			path = WidgetViews;
+			sourceTree = "<group>";
+		};
 		53BE9D5A292E244F00F33D56 /* WidgetViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,7 +259,6 @@
 			children = (
 				53D4DDBC29267ED600E37173 /* RecipeWidgetView.swift */,
 				53BE9D5C292E24C600F33D56 /* CircularRecipeWidgetView.swift */,
-				53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */,
 			);
 			path = RecipeWidget;
 			sourceTree = "<group>";
@@ -285,19 +290,11 @@
 		53D4DD012925323400E37173 /* RefridgeWatchApp */ = {
 			isa = PBXGroup;
 			children = (
-				53D4DD85292631CC00E37173 /* Resources */,
-				53D4DD84292631C400E37173 /* Sources */,
-				53D4DD082925323500E37173 /* Preview Content */,
-			);
-			path = RefridgeWatchApp;
-			sourceTree = "<group>";
-		};
-		53D4DD082925323500E37173 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
+				53D4DD022925323400E37173 /* RefridgeWatchApp.swift */,
+				53D4DD062925323500E37173 /* Assets.xcassets */,
 				53D4DD092925323500E37173 /* Preview Assets.xcassets */,
 			);
-			path = "Preview Content";
+			path = RefridgeWatchApp;
 			sourceTree = "<group>";
 		};
 		53D4DD1729253A2A00E37173 /* Frameworks */ = {
@@ -308,22 +305,6 @@
 				53D4DD4D29253C7A00E37173 /* Intents.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		53D4DD84292631C400E37173 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				53D4DD8B2926346F00E37173 /* Main */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		53D4DD85292631CC00E37173 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				53D4DD8E2926390C00E37173 /* Main */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		53D4DD862926334700E37173 /* Resources */ = {
@@ -366,39 +347,6 @@
 				53BE9D712938A11A00F33D56 /* TabBarCoordinator.swift */,
 			);
 			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		53D4DD8B2926346F00E37173 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				53D4DD8D292638DA00E37173 /* Home */,
-				53D4DD022925323400E37173 /* RefridgeWatchApp.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		53D4DD8D292638DA00E37173 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				53D4DD042925323400E37173 /* ContentView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		53D4DD8E2926390C00E37173 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				53D4DD8F2926391200E37173 /* Assets */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		53D4DD8F2926391200E37173 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				53D4DD062925323500E37173 /* Assets.xcassets */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		53D4DD902926396700E37173 /* Main */ = {
@@ -486,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				53D4DDAF29265DFB00E37173 /* ViewModels */,
+				538022B2294A130100C80CC3 /* WidgetViews */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -714,7 +663,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53D4DD052925323400E37173 /* ContentView.swift in Sources */,
 				53D4DD032925323400E37173 /* RefridgeWatchApp.swift in Sources */,
 				538022B12949FA7900C80CC3 /* RecipeWidgetViewModel.swift in Sources */,
 				538022B02949FA5400C80CC3 /* SmallRecipeWidgetView.swift in Sources */,
@@ -1003,7 +951,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RefridgeWatchApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RefridgeWatchApp\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Refridge;
@@ -1033,7 +981,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RefridgeWatchApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RefridgeWatchApp\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Refridge;
