@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				530AC231291C1BBE009CE3F2 /* RefridgeApp */,
-				53D4DD012925323400E37173 /* Refridge Watch App */,
+				53D4DD012925323400E37173 /* RefridgeWatchApp */,
 				53D4DD9829264A2600E37173 /* RefridgeWidget */,
 				53D4DD1729253A2A00E37173 /* Frameworks */,
 				530AC230291C1BBE009CE3F2 /* Products */,
@@ -238,7 +238,7 @@
 			path = Recipes;
 			sourceTree = "<group>";
 		};
-		53D4DD012925323400E37173 /* Refridge Watch App */ = {
+		53D4DD012925323400E37173 /* RefridgeWatchApp */ = {
 			isa = PBXGroup;
 			children = (
 				53D4DD85292631CC00E37173 /* Resources */,
@@ -246,7 +246,7 @@
 				53D4DD83292631B900E37173 /* Configuration */,
 				53D4DD082925323500E37173 /* Preview Content */,
 			);
-			path = "Refridge Watch App";
+			path = RefridgeWatchApp;
 			sourceTree = "<group>";
 		};
 		53D4DD082925323500E37173 /* Preview Content */ = {
@@ -854,7 +854,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Refridge Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RefridgeWatchApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Refridge;
@@ -883,7 +883,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Refridge Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RefridgeWatchApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Refridge;
