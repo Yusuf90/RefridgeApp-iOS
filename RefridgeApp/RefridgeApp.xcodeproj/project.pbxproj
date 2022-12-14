@@ -24,6 +24,8 @@
 		538022AD2949DE1900C80CC3 /* RecipeWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DDB92926742600E37173 /* RecipeWidgetProvider.swift */; };
 		538022AE2949DE1C00C80CC3 /* RecipeWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */; };
 		538022AF2949DE8F00C80CC3 /* SmallRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */; };
+		538022B02949FA5400C80CC3 /* SmallRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */; };
+		538022B12949FA7900C80CC3 /* RecipeWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */; };
 		53BE9D59292E0B9F00F33D56 /* RecipeWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */; };
 		53BE9D5D292E24C600F33D56 /* CircularRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5C292E24C600F33D56 /* CircularRecipeWidgetView.swift */; };
 		53BE9D5F292E2D3100F33D56 /* SmallRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */; };
@@ -31,7 +33,7 @@
 		53BE9D752938B78100F33D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D742938B78100F33D56 /* HomeViewController.swift */; };
 		53BE9D792938B7B500F33D56 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D782938B7B500F33D56 /* StockViewController.swift */; };
 		53BE9D7B2938B7DA00F33D56 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D7A2938B7DA00F33D56 /* RecipesViewController.swift */; };
-		53D4DD032925323400E37173 /* RefridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD022925323400E37173 /* RefridgeApp.swift */; };
+		53D4DD032925323400E37173 /* RefridgeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD022925323400E37173 /* RefridgeWatchApp.swift */; };
 		53D4DD052925323400E37173 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DD042925323400E37173 /* ContentView.swift */; };
 		53D4DD072925323500E37173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D4DD062925323500E37173 /* Assets.xcassets */; };
 		53D4DD0A2925323500E37173 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D4DD092925323500E37173 /* Preview Assets.xcassets */; };
@@ -124,7 +126,7 @@
 		53BE9D782938B7B500F33D56 /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		53BE9D7A2938B7DA00F33D56 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		53D4DD002925323400E37173 /* Refridge Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Refridge Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		53D4DD022925323400E37173 /* RefridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefridgeApp.swift; sourceTree = "<group>"; };
+		53D4DD022925323400E37173 /* RefridgeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefridgeWatchApp.swift; sourceTree = "<group>"; };
 		53D4DD042925323400E37173 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53D4DD062925323500E37173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53D4DD092925323500E37173 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -370,7 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				53D4DD8D292638DA00E37173 /* Home */,
-				53D4DD022925323400E37173 /* RefridgeApp.swift */,
+				53D4DD022925323400E37173 /* RefridgeWatchApp.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -713,7 +715,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D4DD052925323400E37173 /* ContentView.swift in Sources */,
-				53D4DD032925323400E37173 /* RefridgeApp.swift in Sources */,
+				53D4DD032925323400E37173 /* RefridgeWatchApp.swift in Sources */,
+				538022B12949FA7900C80CC3 /* RecipeWidgetViewModel.swift in Sources */,
+				538022B02949FA5400C80CC3 /* SmallRecipeWidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
