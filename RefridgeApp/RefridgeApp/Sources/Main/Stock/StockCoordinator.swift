@@ -17,6 +17,6 @@ final class StockCoordinator: Coordinator {
     // MARK: - Internal methods
     
     func start() -> UIViewController {
-        return stockViewController
+        return UINavigationController(rootViewController: stockViewController)
     }
 }

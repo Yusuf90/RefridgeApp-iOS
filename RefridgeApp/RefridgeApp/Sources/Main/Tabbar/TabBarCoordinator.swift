@@ -47,7 +47,7 @@ final class TabBarCoordinator: Coordinator {
     // MARK: - Private methods
     
     private func setupTabBarItems() {
-        tabBarController.tabBar.tintColor = UIColor.systemBackground
+        tabBarController.tabBar.tintColor = UIColor.systemBrown
         tabBarController.viewControllers = self.tabBarItems.map { $0.setup() }
     }
     

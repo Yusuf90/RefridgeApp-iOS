@@ -17,6 +17,6 @@ final class RecipesCoordinator: Coordinator {
     // MARK: - Internal methods
     
     func start() -> UIViewController {
-        return recipeViewController
+        return UINavigationController(rootViewController: recipeViewController)
     }
 }

@@ -11,7 +11,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let tabBarController = TabBarController()
+    let tabBarCoordinator = TabBarCoordinator(
+        homeCoordinator: HomeCoordinator(),
+        stockCoordinator: StockCoordinator(),
+        recipesCoordinator: RecipesCoordinator()
+    )
     
     // MARK: UIApplicationDelegate States
     // UIApplicationDelegate is a protocol for notifying when events occur such as app launch, app goes into background or foreground, app is terminated, a push notification was opened etc. It handles your application lifecycle and gives space to handle events that were started outside of the app.
@@ -29,9 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = tabBarController
-        
-        tabBarController.selectedIndex = 0
+        window?.rootViewController = tabBarCoordinator.start()
         
         return true
     }
