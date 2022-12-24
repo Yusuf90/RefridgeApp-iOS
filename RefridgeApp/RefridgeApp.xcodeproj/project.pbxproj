@@ -26,6 +26,11 @@
 		538022AF2949DE8F00C80CC3 /* SmallRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */; };
 		538022B02949FA5400C80CC3 /* SmallRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */; };
 		538022B12949FA7900C80CC3 /* RecipeWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */; };
+		538022C429535A9400C80CC3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538022C329535A9400C80CC3 /* Coordinator.swift */; };
+		538022C629535BAA00C80CC3 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538022C529535BAA00C80CC3 /* TabBarItems.swift */; };
+		538022C82954504500C80CC3 /* RecipesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538022C72954504500C80CC3 /* RecipesCoordinator.swift */; };
+		53BD9D4E29574D4B002F9B43 /* StockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BD9D4D29574D4B002F9B43 /* StockCoordinator.swift */; };
+		53BD9D5029574D7E002F9B43 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BD9D4F29574D7E002F9B43 /* HomeCoordinator.swift */; };
 		53BE9D59292E0B9F00F33D56 /* RecipeWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */; };
 		53BE9D5D292E24C600F33D56 /* CircularRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5C292E24C600F33D56 /* CircularRecipeWidgetView.swift */; };
 		53BE9D5F292E2D3100F33D56 /* SmallRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */; };
@@ -117,6 +122,11 @@
 		530AC240291C1BBF009CE3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		530AC24B291CFD99009CE3F2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		538022962949DD7E00C80CC3 /* RefridgeWidgetWatchExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RefridgeWidgetWatchExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		538022C329535A9400C80CC3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		538022C529535BAA00C80CC3 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
+		538022C72954504500C80CC3 /* RecipesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCoordinator.swift; sourceTree = "<group>"; };
+		53BD9D4D29574D4B002F9B43 /* StockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCoordinator.swift; sourceTree = "<group>"; };
+		53BD9D4F29574D7E002F9B43 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWidgetViewModel.swift; sourceTree = "<group>"; };
 		53BE9D5C292E24C600F33D56 /* CircularRecipeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRecipeWidgetView.swift; sourceTree = "<group>"; };
 		53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRecipeWidgetView.swift; sourceTree = "<group>"; };
@@ -221,6 +231,7 @@
 		530AC24A291CFD5A009CE3F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				538022C229535A6900C80CC3 /* Shared */,
 				530AC24D291CFDA1009CE3F2 /* Main */,
 			);
 			path = Sources;
@@ -246,6 +257,14 @@
 			path = WidgetViews;
 			sourceTree = "<group>";
 		};
+		538022C229535A6900C80CC3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				538022C329535A9400C80CC3 /* Coordinator.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		53BE9D5A292E244F00F33D56 /* WidgetViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				53BE9D742938B78100F33D56 /* HomeViewController.swift */,
+				53BD9D4F29574D7E002F9B43 /* HomeCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -275,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				53BE9D782938B7B500F33D56 /* StockViewController.swift */,
+				53BD9D4D29574D4B002F9B43 /* StockCoordinator.swift */,
 			);
 			path = Stock;
 			sourceTree = "<group>";
@@ -283,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				53BE9D7A2938B7DA00F33D56 /* RecipesViewController.swift */,
+				538022C72954504500C80CC3 /* RecipesCoordinator.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -345,6 +367,7 @@
 			children = (
 				530AC24B291CFD99009CE3F2 /* TabBarController.swift */,
 				53BE9D712938A11A00F33D56 /* TabBarCoordinator.swift */,
+				538022C529535BAA00C80CC3 /* TabBarItems.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -635,11 +658,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				530AC24C291CFD99009CE3F2 /* TabBarController.swift in Sources */,
+				53BD9D4E29574D4B002F9B43 /* StockCoordinator.swift in Sources */,
 				530AC233291C1BBE009CE3F2 /* AppDelegate.swift in Sources */,
+				538022C629535BAA00C80CC3 /* TabBarItems.swift in Sources */,
 				53BE9D722938A11A00F33D56 /* TabBarCoordinator.swift in Sources */,
+				538022C82954504500C80CC3 /* RecipesCoordinator.swift in Sources */,
 				53BE9D752938B78100F33D56 /* HomeViewController.swift in Sources */,
 				53BE9D7B2938B7DA00F33D56 /* RecipesViewController.swift in Sources */,
 				53BE9D792938B7B500F33D56 /* StockViewController.swift in Sources */,
+				538022C429535A9400C80CC3 /* Coordinator.swift in Sources */,
+				53BD9D5029574D7E002F9B43 /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
