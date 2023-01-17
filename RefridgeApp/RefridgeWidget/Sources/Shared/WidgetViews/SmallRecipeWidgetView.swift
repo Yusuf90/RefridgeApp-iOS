@@ -41,7 +41,7 @@ struct SmallRecipeWidgetView: View {
                     .foregroundColor(.accentColor)
                 Rectangle().frame(width: min(CGFloat(0.8)*geometry.size.width, geometry.size.width), height: geometry.size.height)
                     .foregroundColor(.primary)
-                    .animation(.linear)
+                    .animation(.linear, value: 1)
             } // ZStack
             .cornerRadius(45.0)
         }.frame(height: 10)
@@ -51,12 +51,18 @@ struct SmallRecipeWidgetView: View {
     init(viewModel: RecipeWidgetViewModel) {
         self.viewModel = viewModel
     }
-    
-    struct SmallWidget_Previews: PreviewProvider {
-        static var previews: some View {
-            Group {
-                SmallRecipeWidgetView(viewModel: RecipeWidgetViewModel())
-            }
+}
+
+struct SmallWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            #if os(watchOS)
+            SmallRecipeWidgetView(viewModel: RecipeWidgetViewModel())
+            #else
+            SmallRecipeWidgetView(viewModel: RecipeWidgetViewModel())
+                .previewDisplayName("systemSmall")
+                //.previewContext(WidgetPreviewContext(family: .systemSmall))
+            #endif
         }
     }
 }

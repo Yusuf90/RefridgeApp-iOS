@@ -36,3 +36,14 @@ struct RecipeWidgetView: View {
     }
     
 }
+
+struct RecipeWidgetView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CircularRecipeWidgetView(viewModel: RecipeWidgetViewModel())
+                .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+            //SmallRecipeWidgetView(viewModel: RecipeWidgetViewModel())
+            //    .previewContext(WidgetPreviewContext(family: .systemSmall))
+        }
+    }
+}

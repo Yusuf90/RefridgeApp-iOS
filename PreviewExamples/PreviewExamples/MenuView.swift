@@ -12,7 +12,8 @@ struct MenuView: View {
         VStack {
             Text("MenuView")
         }
-        .padding()
+        .navigationTitle("Menu")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

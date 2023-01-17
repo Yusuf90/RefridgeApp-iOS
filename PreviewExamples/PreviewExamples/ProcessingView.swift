@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ProcessingView {
-    
+    let displayString: String
+    @Binding var isShowingSheet: Bool
 }
 
 extension ProcessingView: View {
     var body: some View {
-        VStack(spacing: 30) {
-            Text("Processing Order...")
-            Button("Cancel") {
+        Text(displayString)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Cancel") {
+                    isShowingSheet = false
+                }
             }
         }
         .padding(20)
@@ -24,6 +28,8 @@ extension ProcessingView: View {
 
 struct ProcessingView_Previews: PreviewProvider {
     static var previews: some View {
-        ProcessingView()
+        NavigationStack {
+            ProcessingView(displayString: "Processing Order...", isShowingSheet: .constant(true))
+        }
     }
 }

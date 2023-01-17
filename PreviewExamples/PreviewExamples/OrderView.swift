@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OrderView {
+    @State var isShowingSheet: Bool = false
 }
 
 extension OrderView: View {
@@ -18,11 +19,30 @@ extension OrderView: View {
                 .foregroundColor(.accentColor)
             Text("Place order")
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isShowingSheet = true
+                }
+                label: {
+                    Image(systemName: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $isShowingSheet) {
+            NavigationStack {
+                ProcessingView(displayString: "Processing Order...", isShowingSheet: $isShowingSheet)
+            }
+        }
+        .navigationTitle("Place your order")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderView()
+        NavigationStack {
+            OrderView()
+        }
     }
 }

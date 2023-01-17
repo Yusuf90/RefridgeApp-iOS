@@ -19,20 +19,25 @@ struct CircularRecipeWidgetView: View {
     // MARK: - Body
 
     var body: some View {
-        if #available(iOSApplicationExtension 16.0, *) {
-            Gauge(value: recipeGoal) {
-                
-            } currentValueLabel: {
-                Image(systemName: "cup.and.saucer.fill")
-                    .foregroundColor(.accentColor)
-            }
-            .gaugeStyle(.accessoryCircular)
+        Gauge(value: recipeGoal) {
+            
+        } currentValueLabel: {
+            Image(systemName: "cup.and.saucer.fill")
+                .foregroundColor(.accentColor)
         }
+        .gaugeStyle(.accessoryCircular)
     }
 
     // MARK: - Object lifecycle
 
     init(viewModel: RecipeWidgetViewModel) {
         self.viewModel = viewModel
+    }
+}
+
+struct CircularRecipeWidgetView_Previews: PreviewProvider {
+    static var previews: some View {
+        CircularRecipeWidgetView(viewModel: RecipeWidgetViewModel())
+            .previewContext(WidgetPreviewContext(family: .accessoryCircular))
     }
 }
