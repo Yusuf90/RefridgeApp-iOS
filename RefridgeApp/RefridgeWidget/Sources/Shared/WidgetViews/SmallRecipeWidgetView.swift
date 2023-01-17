@@ -19,7 +19,6 @@ struct SmallRecipeWidgetView: View {
     // MARK: - Body
 
     var body: some View {
-        // Fallback on earlier versions (make normal ProgressBar)
         VStack(alignment: .leading) {
             Image(systemName: "cup.and.saucer.fill")
                 .foregroundColor(.accentColor)
@@ -28,25 +27,36 @@ struct SmallRecipeWidgetView: View {
             Text("Title placeholder")
                 .font(.headline)
                 .foregroundColor(.accentColor)
-            GeometryReader { geometry in
-                ZStack(alignment: .leading) {
-                    Rectangle().frame(width: geometry.size.width, height: geometry.size.height)
-                        .opacity(0.3)
-                        .foregroundColor(.accentColor)
-                    Rectangle().frame(width: min(CGFloat(recipeGoal)*geometry.size.width, geometry.size.width), height: geometry.size.height)
-                        .foregroundColor(.primary)
-                        .animation(.linear)
-                } // ZStack
-                .cornerRadius(45.0)
-            }.frame(height: 10)
+            progressBar
         } // VStack
         .padding(16)
         .widgetURL(nil)
     }
+    
+    private var progressBar: some View =
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Rectangle().frame(width: geometry.size.width, height: geometry.size.height)
+                    .opacity(0.3)
+                    .foregroundColor(.accentColor)
+                Rectangle().frame(width: min(CGFloat(0.8)*geometry.size.width, geometry.size.width), height: geometry.size.height)
+                    .foregroundColor(.primary)
+                    .animation(.linear)
+            } // ZStack
+            .cornerRadius(45.0)
+        }.frame(height: 10)
 
     // MARK: - Object lifecycle
 
     init(viewModel: RecipeWidgetViewModel) {
         self.viewModel = viewModel
+    }
+    
+    struct SmallWidget_Previews: PreviewProvider {
+        static var previews: some View {
+            Group {
+                SmallRecipeWidgetView(viewModel: RecipeWidgetViewModel())
+            }
+        }
     }
 }

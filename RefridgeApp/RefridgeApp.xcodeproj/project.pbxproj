@@ -29,6 +29,9 @@
 		538022C429535A9400C80CC3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538022C329535A9400C80CC3 /* Coordinator.swift */; };
 		538022C629535BAA00C80CC3 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538022C529535BAA00C80CC3 /* TabBarItems.swift */; };
 		538022C82954504500C80CC3 /* RecipesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538022C72954504500C80CC3 /* RecipesCoordinator.swift */; };
+		53B97EA8297173A2002C2129 /* BasicSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B97EA7297173A2002C2129 /* BasicSwiftUIView.swift */; };
+		53B97EA9297173A2002C2129 /* BasicSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B97EA7297173A2002C2129 /* BasicSwiftUIView.swift */; };
+		53B97EAA297173A2002C2129 /* BasicSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B97EA7297173A2002C2129 /* BasicSwiftUIView.swift */; };
 		53BD9D4E29574D4B002F9B43 /* StockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BD9D4D29574D4B002F9B43 /* StockCoordinator.swift */; };
 		53BD9D5029574D7E002F9B43 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BD9D4F29574D7E002F9B43 /* HomeCoordinator.swift */; };
 		53BE9D59292E0B9F00F33D56 /* RecipeWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */; };
@@ -126,6 +129,7 @@
 		538022C329535A9400C80CC3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		538022C529535BAA00C80CC3 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
 		538022C72954504500C80CC3 /* RecipesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCoordinator.swift; sourceTree = "<group>"; };
+		53B97EA7297173A2002C2129 /* BasicSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSwiftUIView.swift; sourceTree = "<group>"; };
 		53BD9D4D29574D4B002F9B43 /* StockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCoordinator.swift; sourceTree = "<group>"; };
 		53BD9D4F29574D7E002F9B43 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWidgetViewModel.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */,
+				53B97EA7297173A2002C2129 /* BasicSwiftUIView.swift */,
 			);
 			path = WidgetViews;
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				538022A72949DDAE00C80CC3 /* RecipeWidget.swift in Sources */,
+				53B97EAA297173A2002C2129 /* BasicSwiftUIView.swift in Sources */,
 				538022A92949DDF200C80CC3 /* RecipeEntry.swift in Sources */,
 				538022AB2949DDF900C80CC3 /* CircularRecipeWidgetView.swift in Sources */,
 				538022AD2949DE1900C80CC3 /* RecipeWidgetProvider.swift in Sources */,
@@ -696,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D4DD032925323400E37173 /* RefridgeWatchApp.swift in Sources */,
+				53B97EA8297173A2002C2129 /* BasicSwiftUIView.swift in Sources */,
 				538022B12949FA7900C80CC3 /* RecipeWidgetViewModel.swift in Sources */,
 				538022B02949FA5400C80CC3 /* SmallRecipeWidgetView.swift in Sources */,
 			);
@@ -706,6 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D4DDBA2926742600E37173 /* RecipeWidgetProvider.swift in Sources */,
+				53B97EA9297173A2002C2129 /* BasicSwiftUIView.swift in Sources */,
 				53D4DDB429266F3700E37173 /* RecipeEntry.swift in Sources */,
 				53D4DDBD29267ED600E37173 /* RecipeWidgetView.swift in Sources */,
 				53D4DDB629266FBD00E37173 /* RecipeWidgetEntryView.swift in Sources */,

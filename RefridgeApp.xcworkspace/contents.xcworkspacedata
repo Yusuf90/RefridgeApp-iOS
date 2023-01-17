@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PreviewExamples/PreviewExamples.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RefridgeApp/RefridgeApp.xcodeproj">
    </FileRef>
 </Workspace>
