@@ -38,9 +38,14 @@ final class StockViewController: UIViewController, UITableViewDataSource, UITabl
     
     // cellForRowAt is used to determine what data should be shown in the cell of each row (which is used as indexPath.row)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = ingredients[indexPath.row]
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: StockTableViewCell.Constants.identifier, for: indexPath) as? StockTableViewCell {
+            return cell
+        } else {
+            // Default value if IngredientCell is not dequeued
+            let cell = StockTableViewCell(style: .default, reuseIdentifier: StockTableViewCell.Constants.identifier)
+            cell.textLabel?.text = "Data not found!"
+            return cell
+        }
     }
     
     // numberOfRowsInSection is used to supply how many rows there are.
@@ -69,6 +74,14 @@ final class StockViewController: UIViewController, UITableViewDataSource, UITabl
         // UITableView.dataSource is used to get, update and set data for the tableview
         tableView.dataSource = self
         
+        // Register cells to populate the tableview
+        tableView.register(StockTableViewCell.self, forCellReuseIdentifier: StockTableViewCell.Constants.identifier)
+        tableView.rowHeight = StockTableViewCell.Constants.rowHeight
+        
+        // Define the footer part of the tableview.
+        tableView.tableFooterView = UIView()
+        
+        // Place the tableView itself within this UIViewController
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         

@@ -36,7 +36,7 @@
 		53BE9D752938B78100F33D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D742938B78100F33D56 /* HomeViewController.swift */; };
 		53BE9D792938B7B500F33D56 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D782938B7B500F33D56 /* StockViewController.swift */; };
 		53BE9D7B2938B7DA00F33D56 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D7A2938B7DA00F33D56 /* RecipesViewController.swift */; };
-		53C4A4792965D1530021620E /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4A4782965D1530021620E /* IngredientCell.swift */; };
+		53C4A4792965D1530021620E /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4A4782965D1530021620E /* StockTableViewCell.swift */; };
 		53CA95852976DFE600B43A3C /* RecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4DDBC29267ED600E37173 /* RecipeWidgetView.swift */; };
 		53CA95872976E40100B43A3C /* RecipeWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D58292E0B9F00F33D56 /* RecipeWidgetViewModel.swift */; };
 		53CA958A2976E6B800B43A3C /* SmallRecipeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE9D5E292E2D3100F33D56 /* SmallRecipeWidgetView.swift */; };
@@ -136,7 +136,7 @@
 		53BE9D742938B78100F33D56 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53BE9D782938B7B500F33D56 /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		53BE9D7A2938B7DA00F33D56 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
-		53C4A4782965D1530021620E /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		53C4A4782965D1530021620E /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 		53D4DD002925323400E37173 /* Refridge Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Refridge Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D4DD022925323400E37173 /* RefridgeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefridgeWatchApp.swift; sourceTree = "<group>"; };
 		53D4DD062925323500E37173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 			children = (
 				53BE9D782938B7B500F33D56 /* StockViewController.swift */,
 				53BD9D4D29574D4B002F9B43 /* StockCoordinator.swift */,
-				53C4A4782965D1530021620E /* IngredientCell.swift */,
+				53C4A4782965D1530021620E /* StockTableViewCell.swift */,
 			);
 			path = Stock;
 			sourceTree = "<group>";
@@ -666,7 +666,7 @@
 				530AC233291C1BBE009CE3F2 /* AppDelegate.swift in Sources */,
 				538022C629535BAA00C80CC3 /* TabBarItems.swift in Sources */,
 				53BE9D722938A11A00F33D56 /* TabBarCoordinator.swift in Sources */,
-				53C4A4792965D1530021620E /* IngredientCell.swift in Sources */,
+				53C4A4792965D1530021620E /* StockTableViewCell.swift in Sources */,
 				538022C82954504500C80CC3 /* RecipesCoordinator.swift in Sources */,
 				53BE9D752938B78100F33D56 /* HomeViewController.swift in Sources */,
 				53BE9D7B2938B7DA00F33D56 /* RecipesViewController.swift in Sources */,
