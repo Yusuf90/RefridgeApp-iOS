@@ -13,12 +13,12 @@ struct OrderView {
 
 extension OrderView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "square.and.pencil")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Place order")
-        }
+        let pieSliceItems: [PieSliceItem] = [
+            PieSliceItem(name: "Fixed expenses", value: 1300, color: Color(hex: 0xFF6200)),
+            PieSliceItem(name: "Transport", value: 500, color: Color(hex: 0x525199)),
+            PieSliceItem(name: "Groceries", value: 300, color: Color(hex: 0xAB0066))]
+        
+        PieChartView(pieSliceItems: pieSliceItems, formatter: {value in String(format: "$%.2f", value)})
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {

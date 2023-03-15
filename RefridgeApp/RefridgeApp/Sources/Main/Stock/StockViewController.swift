@@ -8,11 +8,7 @@
 import Foundation
 import UIKit
 
-final class StockViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    // MARK: - Internal properties
-    
-    var tableView = UITableView()
+final class StockViewController: UIViewController {
     
     // MARK: - Private properties
     
@@ -22,7 +18,7 @@ final class StockViewController: UIViewController, UITableViewDataSource, UITabl
         "Mozarella"
     ]
     
-    // MARK: - UIViewController
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,41 +29,9 @@ final class StockViewController: UIViewController, UITableViewDataSource, UITabl
         setup()
     }
     
-    // MARK: - UITableViewDataSource
-    // This section is used to describe how to use the fetched data
-    
-    // cellForRowAt is used to determine what data should be shown in the cell of each row (which is used as indexPath.row)
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: StockTableViewCell.Constants.identifier, for: indexPath) as? StockTableViewCell {
-            return cell
-        } else {
-            // Default value if IngredientCell is not dequeued
-            let cell = StockTableViewCell(style: .default, reuseIdentifier: StockTableViewCell.Constants.identifier)
-            cell.textLabel?.text = "Data not found!"
-            return cell
-        }
-    }
-    
-    // numberOfRowsInSection is used to supply how many rows there are.
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredients.count
-    }
-    
-    // MARK: - UITableViewDelegate
-    // This section is used for callback methods for user interactions.
-    
-    // didSelectRowAt is called whenever the user taps on a cell of the tableView.
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
     // MARK: - Private methods
     
     private func setup() {
-        setupTableView()
-    }
-    
-    private func setupTableView() {
         // UITableView.delegate is used for callback actions like tapping or swiping.
         tableView.delegate = self
         
@@ -91,5 +55,39 @@ final class StockViewController: UIViewController, UITableViewDataSource, UITabl
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+    
+// MARK: - UITableViewDataSource
+// This section is used to describe how to use the fetched data
+
+// cellForRowAt is used to determine what data should be shown in the cell of each row (which is used as indexPath.row)
+// numberOfRowsInSection is used to supply how many rows there are.
+extension StockViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: StockTableViewCell.Constants.identifier, for: indexPath) as? StockTableViewCell {
+            return cell
+        } else {
+            // Default value if IngredientCell is not dequeued
+            let cell = StockTableViewCell(style: .default, reuseIdentifier: StockTableViewCell.Constants.identifier)
+            cell.textLabel?.text = "Data not found!"
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ingredients.count
+    }
+}
+
+// MARK: - UITableViewDelegate
+// This section is used for callback methods for user interactions.
+
+// didSelectRowAt is called whenever the user taps on a cell of the tableView.
+extension StockViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
