@@ -12,7 +12,7 @@ final class StockCoordinator: Coordinator {
     
     // MARK: - Private properties
     
-    private let stockViewController = StockViewController()
+    private let stockViewController = StockViewController(stockViewModel: StockTableViewModel())
     
     // MARK: - Internal methods
     

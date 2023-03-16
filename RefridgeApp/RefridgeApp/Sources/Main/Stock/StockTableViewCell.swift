@@ -24,8 +24,8 @@ final class StockTableViewCell: UITableViewCell {
     // MARK: - Private properties
     
     private let nameStackView = UIStackView()
-    private let nameLabel = UILabel()
-    private let unitLabel = UILabel()
+    var nameLabel = UILabel()
+    var unitLabel = UILabel()
     private let seperatorlineView = UIView()
     private let editImageView = UIImageView()
     
