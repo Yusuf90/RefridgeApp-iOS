@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531F0C5C29C61FBB008BD736 /* PieChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531F0C5B29C61FBB008BD736 /* PieChartModel.swift */; };
 		53243CBE29A3C98A00D3429F /* PieSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53243CBD29A3C98A00D3429F /* PieSliceView.swift */; };
 		53243CC129A3CA0400D3429F /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53243CC029A3CA0400D3429F /* PieChartView.swift */; };
 		53B6A65D29C07EF800DD384B /* View+onAnimationCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B6A65C29C07EF800DD384B /* View+onAnimationCompleted.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		531F0C5B29C61FBB008BD736 /* PieChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartModel.swift; sourceTree = "<group>"; };
 		53243CBD29A3C98A00D3429F /* PieSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceView.swift; sourceTree = "<group>"; };
 		53243CC029A3CA0400D3429F /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		53B6A65C29C07EF800DD384B /* View+onAnimationCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+onAnimationCompleted.swift"; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				53243CBD29A3C98A00D3429F /* PieSliceView.swift */,
+				531F0C5B29C61FBB008BD736 /* PieChartModel.swift */,
 				53243CC029A3CA0400D3429F /* PieChartView.swift */,
 				53B6A65C29C07EF800DD384B /* View+onAnimationCompleted.swift */,
 			);
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53243CC129A3CA0400D3429F /* PieChartView.swift in Sources */,
+				531F0C5C29C61FBB008BD736 /* PieChartModel.swift in Sources */,
 				53B97EBA297175A6002C2129 /* TabBarView.swift in Sources */,
 				53B6A65D29C07EF800DD384B /* View+onAnimationCompleted.swift in Sources */,
 				53CA95802975DB3A00B43A3C /* OrderView.swift in Sources */,
