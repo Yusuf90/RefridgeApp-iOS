@@ -25,6 +25,7 @@ final class StockViewController: UIViewController {
     }()
     
     // TODO: What is a Cancellable?
+    // Cancellables will be used for garbage collection.
     private var cancellables = Set<AnyCancellable>()
     
     init(stockViewModel: StockTableViewModel) {

@@ -22,18 +22,15 @@ public struct PieChartView: View {
     private let totalText: String = "Total"
     private let totalIndex: Int = -1
     
-    var slices: [PieSliceMetrics] {
+    var slices: [PieSliceModel] {
         let sum = pieSliceItems.map{$0.value}.reduce(0, +)
         var endDeg: Double = 0
-        var tempSlices: [PieSliceMetrics] = []
+        var tempSlices: [PieSliceModel] = []
         
-        for (i, value) in pieSliceItems.enumerated() {
+        for (_, value) in pieSliceItems.enumerated() {
             let degrees: Double = value.value * 360 / sum
-            tempSlices.append(PieSliceMetrics(startAngle: Angle(degrees: endDeg),
-                                              endAngle: Angle(degrees: endDeg + degrees),
-                                              text: String(format: "%.0f%%", value.value * 100 / sum),
-                                              sliceColor: self.pieSliceItems[i].color,
-                                              textColor: Color.white))
+            tempSlices.append(PieSliceModel(startAngle: Angle(degrees: endDeg),
+                                              endAngle: Angle(degrees: endDeg + degrees)))
             endDeg += degrees
         }
         return tempSlices
@@ -51,7 +48,7 @@ public struct PieChartView: View {
             VStack{
                 ZStack{
                     ForEach(0..<self.pieSliceItems.count, id: \.self) { i in
-                        PieSlice(pieSliceData: self.slices[i])
+                        PieSlice(pieSliceModel: self.slices[i])
                             .onTapGesture {
                                 withAnimation(.spring()) {
                                     self.activeIndex = self.activeIndex == i ? totalIndex : i

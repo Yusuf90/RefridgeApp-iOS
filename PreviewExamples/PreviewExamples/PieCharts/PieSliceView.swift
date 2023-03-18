@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct PieSlice: View {
-    var pieSliceData: PieSliceMetrics
-    @State var degreeDifference: Double = 0.0
-    
-    var midRadians: Double {
-        return Double.pi / 2.0 - (pieSliceData.startAngle + pieSliceData.endAngle).radians / 2.0
+    let pieSliceModel: PieSliceModel
+    private enum Constants {
+        static let animationDuration: Double = 1.0
     }
+    
+    @State var degreeDifference: Double = 0.0
+    @State var sliceColor: Color = Color.black
     
     var body: some View {
         // GeometryReader acts as a container to represent its parent view.
@@ -26,41 +27,36 @@ struct PieSlice: View {
         //      You can see this as a <div> identifier in Web Development
         //      Example: geometryReader.frame(in: .named("<name goes here>")).<attribute of frame>
         GeometryReader { geometry in
-            // ZStack assigns each assigned subview a higher z-axis value than the one before it, meaning later subviews appear "on top" of earlier ones.
-            // In this case, Path is on the bottom z-axis and Text is on top.
-            ZStack {
-                // Path is a view that lets you draw custom shapes.
-                // In this case, path is used to add an arc with configurable start- and end angles.
-                ArcSlice(startDegrees: pieSliceData.startAngle.degrees, endDegrees: pieSliceData.startAngle.degrees + degreeDifference)
-                .fill(pieSliceData.sliceColor)
-                .onAnimationCompleted(for: degreeDifference) {
-                    print("Animation completed!")
-                }
-                // Text that is placed in the middle of the arc.
-                // This should be made optional.
-                Text(pieSliceData.text)
-                    .position(
-                        x: geometry.size.width * 0.5 * CGFloat(1.0 + 0.78 * cos(self.midRadians)),
-                        y: geometry.size.height * 0.5 * CGFloat(1.0 - 0.78 * sin(self.midRadians))
-                    )
-                    .foregroundColor(pieSliceData.textColor)
+            ArcSlice(startDegrees: pieSliceModel.startAngle.degrees, endDegrees: pieSliceModel.startAngle.degrees + degreeDifference)
+            .fill(sliceColor)
+            .onAnimationCompleted(for: degreeDifference) {
+                print("Animation completed!")
             }
         }
         .aspectRatio(1, contentMode: .fit)
         .onAppear {
-            withAnimation(.easeInOut(duration: 1.0)) {
-                self.degreeDifference = pieSliceData.endAngle.degrees - pieSliceData.startAngle.degrees
+            withAnimation(.easeInOut(duration: Constants.animationDuration)) {
+                self.degreeDifference = pieSliceModel.endAngle.degrees - pieSliceModel.startAngle.degrees
             }
         }
     }
 }
 
+
 struct ArcSlice: Shape {
-    var startDegrees: Double // Conform VectorArithmetic
+    let startDegrees: Double // Conform VectorArithmetic
     var endDegrees: Double // Conform VectorArithmetic
+    
+    // Point out which value to animate
+    var animatableData: Double {
+        get { return endDegrees }
+        set { endDegrees = newValue }
+    }
     
     func path(in rect: CGRect) -> Path {
         
+        // Path is a view that lets you draw custom shapes.
+        // In this case, path is used to add an arc with configurable start- and end angles.
         var p = Path()
         // Move the path to the center point of the container view.
         // This is the starting point of the path.
@@ -78,25 +74,15 @@ struct ArcSlice: Shape {
         
         return p
     }
-    
-    // Point out which value to animate
-    var animatableData: Double {
-        get { return endDegrees }
-        set { endDegrees = newValue }
-    }
-    
 }
 
-struct PieSliceMetrics {
-    var startAngle: Angle
-    var endAngle: Angle
-    var text: String
-    var sliceColor: Color
-    var textColor: Color
+struct PieSliceModel {
+    let startAngle: Angle
+    let endAngle: Angle
 }
 
 struct PieSlice_Previews: PreviewProvider {
     static var previews: some View {
-        PieSlice(pieSliceData: PieSliceMetrics(startAngle: Angle(degrees: 0.0), endAngle: Angle(degrees: 120.0), text: "30%", sliceColor: Color.black, textColor: Color.white))
+        PieSlice(pieSliceModel: PieSliceModel(startAngle: Angle(degrees: 0.0), endAngle: Angle(degrees: 120.0)))
     }
 }
