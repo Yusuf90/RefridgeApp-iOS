@@ -7,9 +7,8 @@
 
 import Foundation
 import SwiftUI
-import Combine
 
-final class PieChartModel: ObservableObject {
+final class PieChartModel {
     
     // MARK: - Internal properties
     
@@ -20,7 +19,6 @@ final class PieChartModel: ObservableObject {
         var id = UUID()
     }
     
-    private var cancellables = Set<AnyCancellable>()
     let data: [PieSliceData]
     lazy var sliceAngles: [PieSliceModel] = {
         let sum = data.map{$0.value}.reduce(0, +)
@@ -33,11 +31,6 @@ final class PieChartModel: ObservableObject {
                                            endAngle: Angle(degrees: endDeg + degrees),
                                            id: value.id)
             
-            sliceModel.objectWillChange.sink { _ in
-                self.objectWillChange.send()
-            }
-            .store(in: &cancellables)
-            
             tempSlices.append(sliceModel)
             endDeg += degrees
         }
@@ -49,6 +42,13 @@ final class PieChartModel: ObservableObject {
     
     init(data: [PieChartModel.PieSliceData]) {
         self.data = data
+    }
+    
+    func startNextSliceAnimationIfNeeded(currentSliceIndex: Int) {
+        let nextSliceIndex = currentSliceIndex + 1
+        guard nextSliceIndex < sliceAngles.count else { return }
+        
+        sliceAngles[nextSliceIndex].shouldStartAnimation = true
     }
 }
 

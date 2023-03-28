@@ -15,7 +15,7 @@ struct PieChartView: View {
         static let widthFraction: CGFloat = 0.75
     }
     
-    @ObservedObject var model: PieChartModel
+    let model: PieChartModel
     
     @State var activeIndex: Int
     
@@ -36,9 +36,7 @@ struct PieChartView: View {
                         pieSliceModel: dataPoint,
                         sliceColor: model.data.first(where: { $0.id == dataPoint.id })?.sliceColor ?? Color.black,
                         onAnimationCompleted: {
-                            let nextSliceIndex = index + 1
-                            guard nextSliceIndex < model.sliceAngles.count else { return }
-                            model.sliceAngles[nextSliceIndex].shouldStartAnimation = true
+                            model.startNextSliceAnimationIfNeeded(currentSliceIndex: index)
                         }
                     )
                     // TODO: Change color behaviour here (when "selected")
