@@ -18,7 +18,7 @@ extension OrderView: View {
             PieSliceItem(name: "Transport", value: 500, color: Color(hex: 0x525199)),
             PieSliceItem(name: "Groceries", value: 300, color: Color(hex: 0xAB0066))]
         
-        PieChartView(pieSliceItems: pieSliceItems, formatter: {value in String(format: "$%.2f", value)})
+        CategorisationPieChartView(pieSliceItems: pieSliceItems, formatter: {value in String(format: "$%.2f", value)})
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {

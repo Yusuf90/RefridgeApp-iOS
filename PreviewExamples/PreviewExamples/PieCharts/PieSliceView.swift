@@ -9,8 +9,13 @@ import SwiftUI
 
 struct PieSlice: View {
     let pieSliceModel: PieSliceModel
+    
     private enum Constants {
         static let animationDuration: Double = 1.0
+    }
+    
+    private var midRadians: Double {
+        return Double.pi / 2.0 - (pieSliceModel.startAngle + pieSliceModel.endAngle).radians / 2.0
     }
     
     @State var degreeDifference: Double = 0.0
@@ -27,6 +32,8 @@ struct PieSlice: View {
         //      You can see this as a <div> identifier in Web Development
         //      Example: geometryReader.frame(in: .named("<name goes here>")).<attribute of frame>
         GeometryReader { geometry in
+            
+            // The pie slice object
             ArcSlice(startDegrees: pieSliceModel.startAngle.degrees, endDegrees: pieSliceModel.startAngle.degrees + degreeDifference)
             .fill(sliceColor)
             .onAnimationCompleted(for: degreeDifference) {
@@ -76,9 +83,10 @@ struct ArcSlice: Shape {
     }
 }
 
-struct PieSliceModel {
+struct PieSliceModel: Identifiable {
     let startAngle: Angle
     let endAngle: Angle
+    var id = UUID()
 }
 
 struct PieSlice_Previews: PreviewProvider {
