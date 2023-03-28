@@ -20,7 +20,7 @@ struct CategorisationPieChartView: View {
         static let opacityFactor: CGFloat = 0.5
     }
     
-    @ObservedObject var model: PieChartModel
+    let model: PieChartModel
     
     @State private var activeIndex: Int
     
@@ -150,5 +150,17 @@ struct CategorisationPieChartView_Previews: PreviewProvider {
         
         CategorisationPieChartView(pieSliceItems: pieSliceItems,
                      formatter: {value in String(format: "€%.2f", value)})
+    }
+}
+
+extension Color {
+    init(hex: UInt, alpha: Double = 1) {
+        self.init(
+            .sRGB,
+            red: Double((hex >> 16) & 0xff) / 255,
+            green: Double((hex >> 08) & 0xff) / 255,
+            blue: Double((hex >> 00) & 0xff) / 255,
+            opacity: alpha
+        )
     }
 }

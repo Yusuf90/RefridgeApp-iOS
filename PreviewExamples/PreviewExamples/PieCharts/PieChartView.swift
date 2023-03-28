@@ -29,15 +29,27 @@ struct PieChartView: View {
     
     public var body: some View {
         GeometryReader { geometry in
-                ZStack{
-                    ForEach(model.sliceAngles) { dataPoint in
-                        PieSlice(pieSliceModel: dataPoint, sliceColor: model.data.first(where: { $0.id == dataPoint.id })?.sliceColor ?? Color.black)
-                        // TODO: Change color behaviour here (when "selected")
-                        // TODO: Animation should be sequential
-                    }
-                    .frame(width: Constants.widthFraction * geometry.size.width, height: Constants.widthFraction * geometry.size.width)
-                } // ZStack
-                .background(Constants.backgroundColor)
+            ZStack{
+
+                ForEach(Array(model.sliceAngles.enumerated()), id: \.offset) { (index, dataPoint) in
+                    PieSlice(
+                        pieSliceModel: dataPoint,
+                        sliceColor: model.data.first(where: { $0.id == dataPoint.id })?.sliceColor ?? Color.black,
+                        onAnimationCompleted: {
+                            let nextSliceIndex = index + 1
+                            guard nextSliceIndex < model.sliceAngles.count else { return }
+                            model.sliceAngles[nextSliceIndex].shouldStartAnimation = true
+                        }
+                    )
+                    // TODO: Change color behaviour here (when "selected")
+                    // TODO: Animation should be sequential
+                }
+                .frame(width: Constants.widthFraction * geometry.size.width, height: Constants.widthFraction * geometry.size.width)
+            } // ZStack
+            .background(Constants.backgroundColor)
+            .onAppear() {
+                model.sliceAngles[0].shouldStartAnimation = true
+            }
         }
     }
 }
@@ -52,17 +64,5 @@ struct PieChartView_Previews: PreviewProvider {
         
         PieChartView(pieChartModel: pieSliceMockData)
         // Add selector view here
-    }
-}
-
-extension Color {
-    init(hex: UInt, alpha: Double = 1) {
-        self.init(
-            .sRGB,
-            red: Double((hex >> 16) & 0xff) / 255,
-            green: Double((hex >> 08) & 0xff) / 255,
-            blue: Double((hex >> 00) & 0xff) / 255,
-            opacity: alpha
-        )
     }
 }

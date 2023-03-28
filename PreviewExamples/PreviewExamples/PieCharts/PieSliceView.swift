@@ -8,7 +8,16 @@
 import SwiftUI
 
 struct PieSlice: View {
-    let pieSliceModel: PieSliceModel
+    @State var sliceColor: Color
+    @State var degreeDifference: Double = 0.0
+    @ObservedObject var pieSliceModel: PieSliceModel
+    let onAnimationCompleted: (() -> Void)?
+    
+    init(pieSliceModel: PieSliceModel, sliceColor: Color = .black, onAnimationCompleted: (() -> Void)? = nil) {
+        self.pieSliceModel = pieSliceModel
+        self.sliceColor = sliceColor
+        self.onAnimationCompleted = onAnimationCompleted
+    }
     
     private enum Constants {
         static let animationDuration: Double = 1.0
@@ -18,8 +27,6 @@ struct PieSlice: View {
         return Double.pi / 2.0 - (pieSliceModel.startAngle + pieSliceModel.endAngle).radians / 2.0
     }
     
-    @State var degreeDifference: Double = 0.0
-    @State var sliceColor: Color = Color.black
     
     var body: some View {
         // GeometryReader acts as a container to represent its parent view.
@@ -37,14 +44,20 @@ struct PieSlice: View {
             ArcSlice(startDegrees: pieSliceModel.startAngle.degrees, endDegrees: pieSliceModel.startAngle.degrees + degreeDifference)
             .fill(sliceColor)
             .onAnimationCompleted(for: degreeDifference) {
-                print("Animation completed!")
+                onAnimationCompleted?()
+            }
+            .onChange(of: pieSliceModel.shouldStartAnimation) { newValue in
+                if newValue == true {
+                    startAnimation()
+                }
             }
         }
         .aspectRatio(1, contentMode: .fit)
-        .onAppear {
-            withAnimation(.easeInOut(duration: Constants.animationDuration)) {
-                self.degreeDifference = pieSliceModel.endAngle.degrees - pieSliceModel.startAngle.degrees
-            }
+    }
+    
+    func startAnimation() {
+        withAnimation(.easeInOut(duration: Constants.animationDuration)) {
+            self.degreeDifference = pieSliceModel.endAngle.degrees - pieSliceModel.startAngle.degrees
         }
     }
 }
@@ -83,14 +96,12 @@ struct ArcSlice: Shape {
     }
 }
 
-struct PieSliceModel: Identifiable {
-    let startAngle: Angle
-    let endAngle: Angle
-    var id = UUID()
-}
-
 struct PieSlice_Previews: PreviewProvider {
     static var previews: some View {
-        PieSlice(pieSliceModel: PieSliceModel(startAngle: Angle(degrees: 0.0), endAngle: Angle(degrees: 120.0)))
+        let model = PieSliceModel(startAngle: Angle(degrees: 0.0), endAngle: Angle(degrees: 120.0))
+        PieSlice(pieSliceModel: model, onAnimationCompleted: {})
+        .onAppear {
+            model.shouldStartAnimation = true
+        }
     }
 }
