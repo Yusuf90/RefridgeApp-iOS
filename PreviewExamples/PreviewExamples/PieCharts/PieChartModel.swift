@@ -19,7 +19,7 @@ final class PieChartModel {
         var id = UUID()
     }
     
-    let data: [PieSliceData]
+    var data: [PieSliceData]
     lazy var sliceAngles: [PieSliceModel] = {
         let sum = data.map{$0.value}.reduce(0, +)
         var endDeg: Double = 0

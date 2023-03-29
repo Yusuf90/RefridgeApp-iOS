@@ -30,7 +30,6 @@ struct PieChartView: View {
     public var body: some View {
         GeometryReader { geometry in
             ZStack{
-
                 ForEach(Array(model.sliceAngles.enumerated()), id: \.offset) { (index, dataPoint) in
                     PieSlice(
                         pieSliceModel: dataPoint,
@@ -39,8 +38,9 @@ struct PieChartView: View {
                             model.startNextSliceAnimationIfNeeded(currentSliceIndex: index)
                         }
                     )
-                    // TODO: Change color behaviour here (when "selected")
-                    // TODO: Animation should be sequential
+                    .onChange(of: activeIndex) { newValue in
+                        model.data[newValue].sliceColor = Color.red
+                    }
                 }
                 .frame(width: Constants.widthFraction * geometry.size.width, height: Constants.widthFraction * geometry.size.width)
             } // ZStack
@@ -60,7 +60,28 @@ struct PieChartView_Previews: PreviewProvider {
             PieChartModel.PieSliceData(name: "Groceries", value: 450, sliceColor: Color.green)
         ])
         
-        PieChartView(pieChartModel: pieSliceMockData)
-        // Add selector view here
+        let pieChartView = PieChartView(pieChartModel: pieSliceMockData)
+        VStack {
+            pieChartView
+            Picker(
+                "Category",
+                selection: Binding(
+                    get: { pieChartView.activeIndex },
+                    set: { newValue in
+                        pieChartView.activeIndex = newValue
+                    }
+                )
+            ) {
+                Text("Total")
+                    .tag(-1)
+                ForEach(Array(pieChartView.model.data.enumerated()), id: \.offset) { (index, dataPoint) in
+                    Text(dataPoint.name)
+                }
+            }
+            .pickerStyle(MenuPickerStyle())
+            .transaction { transaction in
+                transaction.animation = nil
+            }
+        }
     }
 }

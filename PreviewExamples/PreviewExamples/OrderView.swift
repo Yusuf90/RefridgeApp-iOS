@@ -9,33 +9,35 @@ import SwiftUI
 
 struct OrderView {
     @State var isShowingSheet: Bool = false
+    @State var progress: Double = 0
 }
 
 extension OrderView: View {
     var body: some View {
-        let pieSliceItems: [PieSliceItem] = [
-            PieSliceItem(name: "Fixed expenses", value: 1300, color: Color(hex: 0xFF6200)),
-            PieSliceItem(name: "Transport", value: 500, color: Color(hex: 0x525199)),
-            PieSliceItem(name: "Groceries", value: 300, color: Color(hex: 0xAB0066))]
-        
-        CategorisationPieChartView(pieSliceItems: pieSliceItems, formatter: {value in String(format: "$%.2f", value)})
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    isShowingSheet = true
-                }
-                label: {
-                    Image(systemName: "plus")
-                }
+        VStack {
+            Spacer()
+            ZStack {
+                // 2
+                CircularProgressBarView(barPercentage: progress)
+                // 3
+                Text("\(progress * 100, specifier: "%.0f")")
+                    .font(.largeTitle)
+                    .bold()
+            }.frame(width: 200, height: 200)
+            Spacer()
+            HStack {
+                // 4
+                Slider(value: $progress, in: 0...1)
+                // 5
+                Button("Reset") {
+                    resetProgress()
+                }.buttonStyle(.borderedProminent)
             }
         }
-        .sheet(isPresented: $isShowingSheet) {
-            NavigationStack {
-                ProcessingView(displayString: "Processing Order...", isShowingSheet: $isShowingSheet)
-            }
-        }
-        .navigationTitle("Place your order")
-        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    func resetProgress() {
+        progress = 0
     }
 }
 

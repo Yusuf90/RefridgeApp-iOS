@@ -27,7 +27,6 @@ struct PieSlice: View {
         return Double.pi / 2.0 - (pieSliceModel.startAngle + pieSliceModel.endAngle).radians / 2.0
     }
     
-    
     var body: some View {
         // GeometryReader acts as a container to represent its parent view.
         // There are three coordinate spaces available to use in geometry reader:
